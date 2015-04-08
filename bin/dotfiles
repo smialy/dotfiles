@@ -28,15 +28,26 @@ run_node
 
 link() {
    #create force links
-   ln -fs "${DOTFILES_DIRECTORY}/${1}" "${HOME}/${2}"
+   ln -fs "${DOTFILES_DIR}/${1}" "${HOME}/${2}"
 }
 
 link_files(){
 
-    if [[ -e "${HOME}" ]]; then
-        rm -rf "${HOME}"
+    if [[ -e "${HOME}/.vim" ]]; then
+        rm -rf "${HOME}/.vim"
     fi
 
-    
+    link "shell/bashrc"  ".bashrc"
+    link "shell/bash_profile" ".bash_profile"
+       
 }
+
+seek_confirmation "Warning: This step may overwrite your existing dotfiles."
+
+if [ is_confirmed ]; then
+    link_files 
+#    source ${HOME}/.bash_profile
+else
+   print "Aborting..."
+fi
 
