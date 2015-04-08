@@ -1,0 +1,6 @@
+alias ,sublime="~/programs/sublime_text_3/sublime_text"
+alias ,virt="source /usr/local/bin/virtualenvwrapper.sh"
+alias ,up="sudo apt-get update && sudo apt-get upgrade"
+alias ,serve="python3 -m http.server"
+
+
