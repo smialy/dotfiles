@@ -1,0 +1,5 @@
+*~
+*.diff
+*.err
+*.log
+*.orig
