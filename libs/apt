@@ -1,0 +1,9 @@
+run_apt(){
+    if app_exists 'apt'; then
+        echo "Updating apt..."
+        sudo apt-get update && sudo apt-get upgrade
+        sudo apt-get install git curl wget 
+    else
+        echo "Apt-Get - Not found"
+    fi
+}
