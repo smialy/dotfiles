@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DOTFILES_DIR="${HOME}/.dotfiles"
+DOTFILES_URL="https://github.com/smialy/dotfiles/tarball/master"
+
+
+if [[ ! -d ${DOTFILES_DIR} ]]; then
+    printf "$(tput setaf 7)Downloading dotfiles...\033[m\n"
+    mkdir ${DOTFILES_DIR}
+    curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOTFILES_URL}
+    tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOTFILES_DIR}
+    rm -rf ${HOME}/dotfiles.tar.gz
+fi 
+
+cd ${DOTFILES_DIR}
+
