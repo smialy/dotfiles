@@ -31,3 +31,6 @@ function ,extract {
     fi
 fi
 }
+function mkd() {
+    mkdir -p "$@" && cd "$_";
+}

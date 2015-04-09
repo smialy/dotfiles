@@ -1,0 +1,17 @@
+[color]
+    ui = auto
+    interactive = auto
+
+[diff]
+    tool = meld
+
+[pretty]
+    nice = "%C(yellow)%h%C(reset) %C(white)%s%C(cyan)%d%C(reset) -- %an; %ar"
+    
+[push]
+    default = simple
+[core]
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+[include]
+    path = ~/.gitconfig.user

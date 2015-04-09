@@ -11,7 +11,7 @@ app_exists() {
 
 seek_confirmation() {
     printf "\n"
-    print "$@"
+    echo "$@"
     read -p "Continue? (y/n) " -n 1
     printf "\n"
 }

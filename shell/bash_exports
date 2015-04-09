@@ -6,15 +6,9 @@ export EDITOR="vim"
 export HISTCONTROL=ignoredups
 
 # Increase the maximum number of lines contained in the history file
-# (default is 500)
-export HISTFILESIZE=10000
-
-# Increase the maximum number of commands to remember
-# (default is 500)
 export HISTSIZE=10000
-
-# Don't clear the screen after quitting a manual page
-export MANPAGER="less -X"
+export HISTFILESIZE=10000
+export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 # Export PhantomJS bin location
 export PHANTOMJS_BIN="/usr/bin/phantomjs"
@@ -23,5 +17,5 @@ export PHANTOMJS_BIN="/usr/bin/phantomjs"
 # shells instead of the default "last window closed" history
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-export WORKON_HOME="${$HOME}/work/pyenvs
+export WORKON_HOME="${HOME}/work/pyenvs"
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
