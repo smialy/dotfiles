@@ -42,7 +42,7 @@ link_files(){
     link "shell/vimrc"        ".vimrc"
     link "shell/jsbeautifyrc" ".jsbeautifyrc"
     link "git/gitconfig"      ".gitconfig"
-    link "git/gitigrnore"     ".gitignore"
+    link "git/gitignore"     ".gitignore"
        
 }
 
