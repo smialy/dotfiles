@@ -6,21 +6,12 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
     export TERM=xterm-256color
 fi
 
-files=(
-    $HOME/.dotfiles/shell/bash_options
-    $HOME/.dotfiles/shell/bash_exports
-    $HOME/.dotfiles/shell/bash_aliases
-    $HOME/.dotfiles/shell/functions
-    $HOME/.dotfiles/shell/bash_prompt
-    $HOME/.bash_profile.local 
-)
-for index in ${files[@]}
-do
-    if [[ -r ${index} ]]; then
-        source ${index}
+for file in ~/.dotfiles/bash/dots/*; do
+    if [[ -r ${file} ]]; then
+        source ${file}
     fi
 done
-unset files
+unset file;
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then

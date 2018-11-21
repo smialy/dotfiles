@@ -1,0 +1,12 @@
+#!/bin/bash
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ...="cd ../../.."
+alias ll="ls -oGF"
+alias la="ls -AGFoh"
+
+alias ,up="sudo apt update && sudo apt upgrade && sudo apt autoclean && sudo apt autoremove && sudo apt clean"
+alias ,serve="python3 -m http.server"
+
+

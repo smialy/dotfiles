@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #base on https://github.com/necolas/dotfiles
 
@@ -20,35 +20,31 @@ source ./libs/utils
 source ./libs/apt
 source ./libs/node
 
-if [[ "$1" == "--app" || "$1" == "-a" ]]; then
-    run_apt
-fi
-
 
 link() {
-   #create force links
-   ln -fs "${DOTFILES_DIR}/${1}" "${HOME}/${2}"
+    #create force links
+    ln -fs "${DOTFILES_DIR}/${1}" "${HOME}/${2}"
 }
-
 link_files(){
 
     if [[ -e "${HOME}/.vim" ]]; then
         rm -rf "${HOME}/.vim"
     fi
-
-    link "shell/bashrc"       ".bashrc"
-    link "shell/bash_profile" ".bash_profile"
-    link "shell/screenrc"     ".screenrc"
-    link "shell/vimrc"        ".vimrc"
-    link "shell/jsbeautifyrc" ".jsbeautifyrc"
-    link "git/gitconfig"      ".gitconfig"
-    link "git/gitignore"     ".gitignore"
-       
+    link "bash/bashrc"       ".bashrc"
+    link "bash/bash_profile" ".bash_profile"
+    link "bash/screenrc"     ".screenrc"
+    link "vim/vimrc"         ".vimrc"
+    link "git/gitconfig"     ".gitconfig"
+    link "git/gitignore"     ".gitignore"  
 }
 
-seek_confirmation "Instal node libs"
+seek_confirmation "Install apt essential."
 if is_confirmed; then
-    run_node
+    run_apt
+fi
+seek_confirmation "Install node libs."
+if is_confirmed; then
+    node_env
 fi
 
 seek_confirmation "Warning: This step may overwrite your existing dotfiles."

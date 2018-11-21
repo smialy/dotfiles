@@ -5,4 +5,3 @@
 *.orig
 *.pyc
 node_modules
-jspm_packages

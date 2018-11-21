@@ -1,9 +1,8 @@
 run_apt(){
-    if app_exists 'apt'; then
-        echo "Updating apt..."
-        sudo apt-get update && sudo apt-get upgrade
-        sudo apt-get install git curl wget 
-    else
-        echo "Apt-Get - Not found"
-    fi
+    sudo apt update 
+    sudo apt upgrade 
+    sudo apt install -y \
+        build-essential libssl-dev libffi-dev \  #python3
+        xclip tree
+    pip install virtualenvwrapper
 }
