@@ -31,6 +31,14 @@ function ,extract {
     fi
 fi
 }
+
 function mkd() {
     mkdir -p "$@" && cd "$_";
+}
+
+n() {
+  local NOTE
+  NOTE=$*
+
+  echo "$(date)": "$NOTE" >> "$HOME/notes.txt"
 }
