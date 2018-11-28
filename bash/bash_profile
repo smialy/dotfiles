@@ -21,7 +21,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export NVM_DIR="/home/smialy/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-[ -s "/usr/local/bin/virtualenvwrapper.sh" ] && . "/usr/local/bin/virtualenvwrapper.sh"
+[ -s "$HOME/.local/bin/virtualenvwrapper.sh" ] && source "$HOME/.local/bin/virtualenvwrapper.sh"
