@@ -1,0 +1,31 @@
+[color]
+    ui = auto
+    interactive = auto
+
+[diff]
+    tool = meld
+
+[pretty]
+    nice = "%C(yellow)%h%C(reset) %C(white)%s%C(cyan)%d%C(reset) -- %an; %ar"
+    
+[push]
+	default = current
+[core]
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+[include]
+    path = ~/.gitconfig.user
+
+[alias]
+    st = status
+    ci = commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	co = checkout
+[user]
+	name = Piotr Smialkowski
+	email = p.smialkowski@gmail.com
+
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master

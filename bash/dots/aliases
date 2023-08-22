@@ -1,0 +1,17 @@
+#!/bin/bash
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ll="ls -oGF"
+alias la="ls -AGFoh"
+alias rebash="source ~/.bashrc"
+
+alias ,ai="sudo apt install --yes"
+alias ,ni="npm install"
+alias ,nd="npm install --save-dev"
+
+
+alias ,up="sudo apt update && sudo apt upgrade --yes && sudo apt autoclean && sudo apt autoremove && sudo apt clean"
+alias ,serve="python3 -m http.server"
+

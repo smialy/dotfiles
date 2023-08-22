@@ -1,0 +1,6 @@
+#!/bin/bash
+
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s histappend
+shopt -s nocaseglob

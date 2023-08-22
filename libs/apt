@@ -1,0 +1,9 @@
+run_apt(){
+    sudo apt update;
+    sudo apt upgrade;
+    # tools
+    sudo apt install -y build-essential libssl-dev libffi-dev xclip tree htop
+    # python deps
+    sudo apt install -y libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+    pip install virtualenvwrapper;
+}

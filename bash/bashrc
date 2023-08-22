@@ -1,0 +1,7 @@
+[ -n "$PS1" ] && source ~/.bash_profile
+
+if [ -d "$HOME/apps/platform-tools" ] ; then
+ export PATH="$HOME/apps/platform-tools:$PATH"
+fi
+
+

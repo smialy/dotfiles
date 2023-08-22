@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+#base on https://github.com/necolas/dotfiles
+
+DOTFILES_DIR="${HOME}/.dotfiles"
+DOTFILES_URL="https://github.com/smialy/dotfiles/tarball/master"
+
+
+if [[ ! -d ${DOTFILES_DIR} ]]; then
+    echo "Downloading dotfiles..."
+    mkdir ${DOTFILES_DIR}
+    curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOTFILES_URL}
+    tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOTFILES_DIR}
+    rm -rf ${HOME}/dotfiles.tar.gz
+fi
+
+cd ${DOTFILES_DIR}
+
+source ./libs/utils
+source ./libs/apt
+source ./libs/node
+source ./libs/nvim
+
+
+link() {
+    #create force links
+    ln -fs "${DOTFILES_DIR}/${1}" "${HOME}/${2}"
+}
+link_files() {
+
+    if [[ -e "${HOME}/.vim" ]]; then
+        rm -rf "${HOME}/.vim"
+    fi
+    link "bash/bashrc"       ".bashrc"
+    link "bash/bash_profile" ".bash_profile"
+    link "bash/screenrc"     ".screenrc"
+    link "bash/vimrc"         ".vimrc"
+    link "bash/gitconfig"     ".gitconfig"
+    link "bash/gitignore"     ".gitignore"
+    link "bash/tmux.conf"     ".tmux.conf"
+    link "nvim"               ".config/nvim"
+}
+
+seek_confirmation "Install apt essential.";
+if is_confirmed; then
+    run_apt
+fi
+seek_confirmation "Install node libs.";
+
+if is_confirmed; then
+    node_env
+fi
+
+seek_confirmation "Warning: This step may overwrite your existing dotfiles.";
+
+if is_confirmed; then
+    link_files
+    source ${HOME}/.bash_profile
+    echo "Overwite dotfiles..."
+else
+   echo "Aborting..."
+fi
+

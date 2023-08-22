@@ -1,0 +1,86 @@
+"==========================
+" GENERAL
+"==========================
+"Sets how many lines in history
+set history=1000
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Auto reload when a file is changed from the outside
+set autoread
+
+"==========================
+" INTERFACE 
+"==========================
+
+" Set 8 line to the cursor
+set so=8
+
+"Turn on the Wild menu
+set wildmenu
+
+set wildignore=*.pyc,
+
+"Show current positon
+set ruler
+
+"The comnad bar height
+set cmdheight=2
+
+"Make more normal
+set backspace=indent,eol,start
+
+set ignorecase
+set smartcase
+
+"Highlight search results
+set hlsearch
+
+"some performance
+set lazyredraw
+
+"More usefull regular expresions
+set magic
+
+"Show matching brackets
+set showmatch
+
+"No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+"Change esc key"
+inoremap jk <ESC>
+
+"==========================
+" OTHERS
+"==========================
+
+syntax enable
+colorscheme desert
+set background=dark
+
+set encoding=utf8
+
+set ffs=unix,dos,mac
+
+"backup OFF, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+set smartindent
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+set number
+
+call plug#begin()
+
+  Plug 'preservim/nerdtree'
+call plug#end()

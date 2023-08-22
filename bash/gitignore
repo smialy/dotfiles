@@ -1,0 +1,9 @@
+*~
+*.diff
+*.err
+*.log
+*.orig
+*.pyc
+node_modules
+.nyc_output
+coverage
