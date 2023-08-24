@@ -19,7 +19,6 @@ cd ${DOTFILES_DIR}
 source ./libs/utils
 source ./libs/apt
 source ./libs/node
-source ./libs/nvim
 
 
 link() {
