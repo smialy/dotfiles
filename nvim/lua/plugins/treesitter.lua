@@ -7,7 +7,6 @@ return {
             ensure_installed = {
                 "lua",
                 "query",
-                "bash",
                 "python",
                 "javascript",
                 "typescript",
