@@ -10,5 +10,6 @@ vim.keymap.set("n", "<leader>tc", vim.cmd.tabclose)
 vim.keymap.set("n", "<leader>tm", vim.cmd.tabmove)
 
 vim.keymap.set({ "i", "v" }, "jk", "<ESC>", { remap = false, nowait = true })
-vim.keymap.set("n", "<leader>w", vim.cmd.write))
+vim.keymap.set("n", "<leader>l", ":set relativenumber!<CR>")
+vim.keymap.set("n", "<leader>w", vim.cmd.write)
 
