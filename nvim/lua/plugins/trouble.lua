@@ -5,7 +5,6 @@ return {
               icons = false,
          },
         config = function(_, opts)
-            print(opts)
             require("trouble").setup(opts)
         end,
      keys = {
