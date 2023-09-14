@@ -4,7 +4,7 @@ return {
         cmd = "NvimTreeToggle",
         keys = {
             {
-                "<leader>n",
+                "<leader>o",
                 function()
                     require("nvim-tree.api").tree.toggle({ focus = true, find_file = true })
                 end,
