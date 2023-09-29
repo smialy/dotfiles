@@ -87,7 +87,7 @@ return {
                 },
                 -- window / buffer setup
                 view = {
-                    width = 40,
+                    width = 50,
                     preserve_window_proportions = true,
                 },
                 renderer = {
@@ -96,6 +96,9 @@ return {
                     highlight_opened_files = "icon",
                     highlight_modified = "icon",
                     symlink_destination = true,
+                    icons = {
+                        git_placement = "after"
+                    }
                 },
                 diagnostics = {
                     enable = true,
