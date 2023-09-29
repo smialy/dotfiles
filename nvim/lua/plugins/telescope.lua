@@ -32,6 +32,7 @@ return {
             { "<leader>ff", telescope_find("find_files"), desc = "Find Files (root dir)" },
             { "<leader>fg", telescope_find("git_files"), desc = "Grep (root dir)" },
             { "<leader>fb", telescope_find("buffers"), desc = "Buffers" },
+            { "<leader>fr", telescope_find("resume"), desc = "Resume" },
             { "<leader>sw", telescope_find("grep_string"), desc = "Word (root dir)" },
             { "<leader>sg", telescope_find("live_grep"), desc = "Grep (root dir)" },
             { "<leader>/", telescope_find("live_grep"), desc = "Grep (root dir)" },
