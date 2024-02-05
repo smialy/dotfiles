@@ -12,6 +12,15 @@ return {
                 silent = true,
                 desc = "toggle tree",
             },
+            {
+                "<leader>O",
+                function() 
+                    require('nvim-tree.api').tree.focus()
+                end,
+                mode = "n",
+                silent = true,
+                desc = "focus tree",
+            },
         },
         init = function()
             local autocmd = vim.api.nvim_create_autocmd

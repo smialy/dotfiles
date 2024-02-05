@@ -11,7 +11,7 @@ return {
                 log_level = vim.log.levels.DEBUG,
                 filetype = {
                     python = {
-                        require("formatter.filetypes.python").black,
+                        require("formatter.filetypes.python").ruff,
                     },
                     ["*"] = {
                         -- "formatter.filetypes.any" defines default configurations for any

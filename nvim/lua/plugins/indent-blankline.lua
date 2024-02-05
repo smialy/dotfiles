@@ -3,22 +3,12 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {
-            -- char = "▏",
-            char = "│",
-            filetype_exclude = {
-                "help",
-                "alpha",
-                "dashboard",
-                "neo-tree",
-                "Trouble",
-                "lazy",
-                "mason",
-                "notify",
-                "toggleterm",
-                "lazyterm",
+            indent = {
+                char = "▏",
             },
-            show_trailing_blankline_indent = true,
-            show_current_context = true,
+            scope = {
+                show_end = false,
+            }
         },
     },
 }
