@@ -1,0 +1,53 @@
+snippet #!
+	#!/usr/bin/env python3
+
+snippet from
+	from ${1:package} import ${0:module}
+
+snippet awith
+	async with ${1:expr} as ${2:var}:
+		${0:${VISUAL}}
+
+# For
+snippet for
+	for ${1:item} in ${2:items}:
+		${0}
+
+snippet with
+	with ${1:expr} as ${2:var}:
+		${0:${VISUAL}}
+
+snippet awith
+	async with ${1:expr} as ${2:var}:
+		${0:${VISUAL}}
+
+# if __name__ == '__main__':
+snippet main
+	if __name__ == '__main__':
+		${0:main()}
+
+snippet pr
+	print($0)
+
+snippet pprint
+	__import__('pprint').pprint(${1})
+
+snippet ipdb
+	__import__('ipdb').set_trace()
+
+# logging
+# glog = get log
+snippet glog
+	import logging
+	LOGGER = logging.getLogger(${0:__name__})
+snippet le
+	LOGGER.error(${0:msg})
+# conflict with lambda=ld, therefor we change into Logger.debuG
+snippet lg
+	LOGGER.debug(${0:msg})
+snippet lw
+	LOGGER.warning(${0:msg})
+snippet lc
+	LOGGER.critical(${0:msg})
+snippet li
+	LOGGER.info(${0:msg})

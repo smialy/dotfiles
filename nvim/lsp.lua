@@ -23,13 +23,9 @@ return {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local lspconfig = require('lspconfig')
             -- lspconfig.rust_analyzer.setup({})
             -- lspconfig.lua_ls.setup({})
-            lspconfig.pylsp.setup({
-                capabilities = capabilities,
-            })
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -62,13 +58,13 @@ return {
             })
         end
     },
-    {
-        "dcampos/nvim-snippy",
-        "dcampos/cmp-snippy",
+    { "saadparwaiz1/cmp_luasnip" },
+    {   "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp",
     },
     {
         "hrsh7th/nvim-cmp",
-        event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp", lazy = true },
             { "hrsh7th/cmp-path", lazy = true },
@@ -84,11 +80,14 @@ return {
             end
 
             local cmp = require("cmp")
-            local snippy = require("snippy")
+            local luasnip = require("luasnip")
+            -- local diagnostics_options = require("config.defaults").diagnostics_options
+
             return {
                 snippet = {
                     expand = function(args)
-                        snippy.expand_snippet(args.body)
+                        -- For `luasnip` user.
+                        luasnip.lsp_expand(args.body)
                     end,
                 },
                 -- window = {
@@ -109,8 +108,8 @@ return {
                     ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_next_item()
-                        elseif snippy.can_expand_or_advance() then
-                            snippy.expand_or_advance()
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
                         elseif has_words_before() then
                             cmp.complete()
                         else
@@ -121,18 +120,17 @@ return {
                     ["<S-Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
-                        --elseif luasnip.jumpable(-1) then
-                        --    luasnip.jump(-1)
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
                         else
                             fallback()
                         end
                     end, { "i", "s" }),
                 }),
                 sources = cmp.config.sources({
-                    { name = 'codeium'},
-                    { name = "snippy" },
                     { name = "nvim_lsp" },
                     { name = "buffer" },
+                    { name = "luasnip" },
                     { name = "path" },
                     { name = "nvim_lua" },
                 }),
@@ -160,5 +158,4 @@ return {
             })
         end,
     },
-}   
-
+}
