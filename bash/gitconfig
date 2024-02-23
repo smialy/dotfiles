@@ -29,3 +29,5 @@
 	rebase = true
 [init]
 	defaultBranch = master
+[receive]
+	denyCurrentBranch = warn
