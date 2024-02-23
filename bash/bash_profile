@@ -38,4 +38,8 @@ export PATH="/home/smialy/.local/bin:$PYENV_ROOT/bin:$PATH"
 
 export NODE_OPTIONS=--max-old-space-size=8192
 
+if [ -d "$HOME/apps/platform-tools" ] ; then
+ export PATH="$HOME/apps/platform-tools:$PATH"
+fi
+
 [ -s "$HOME/.bash_local" ] && source "$HOME/.bash_local"
