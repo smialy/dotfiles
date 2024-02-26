@@ -15,5 +15,8 @@ return {
       config = function ()
         require("copilot_cmp").setup()
       end
+    },
+    { 
+        'AndreM222/copilot-lualine'
     }
 }

@@ -24,7 +24,7 @@ return {
                             path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
                         },
                     },
-                    lualine_x = { "encoding", "fileformat" },
+                    lualine_x = { "copilot", "encoding", "fileformat" },
                     lualine_y = { "filetype", total_num_lines },
                     lualine_z = {
                         { "location", left_padding = 2 },

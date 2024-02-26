@@ -26,14 +26,14 @@ return {
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local lspconfig = require('lspconfig')
             lspconfig.tsserver.setup({
-                capabilities = capabilities,
+                --capabilities = capabilities,
             })
             lspconfig.rust_analyzer.setup({
-                capabilities = capabilities,
+                --capabilities = capabilities,
             })
             lspconfig.lua_ls.setup({})
             lspconfig.pylsp.setup({
-                capabilities = capabilities,
+                --capabilities = capabilities,
             })
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -137,10 +137,10 @@ return {
                     --{ name = 'codeium'},
                     { name = "copilot" },
                     { name = "snippy" },
-                    { name = "nvim_lsp" },
-                    { name = "buffer" },
-                    { name = "path" },
                     { name = "nvim_lua" },
+                    { name = "nvim_lsp" },
+                    { name = "path" },
+                    { name = "buffer" },
                 }),
             }
         end,
@@ -158,13 +158,12 @@ return {
 
             -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
             cmp.setup.cmdline(":", {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = {
-                    { name = "path" },
-                    { name = "cmdline" },
-                },
+                sources = cmp.config.sources({
+                    { name = "path" }
+                }, {
+                    name = "cmdline",
+                }),
             })
         end,
     },
-}   
-
+}
