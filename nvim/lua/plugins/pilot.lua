@@ -1,11 +1,19 @@
 return {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
+    {
+         "zbirenbaum/copilot.lua",
+         cmd = "Copilot",
+         event = "InsertEnter",
+        config = function () 
+            require("copilot").setup({
+              suggestion = { enabled = false },
+              panel = { enabled = false },
+            })
+        end
     },
-    config = function()
-        require("codeium").setup({
-        })
-    end
+    {
+      "zbirenbaum/copilot-cmp",
+      config = function ()
+        require("copilot_cmp").setup()
+      end
+    }
 }

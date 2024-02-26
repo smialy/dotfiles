@@ -2,7 +2,6 @@
 -- vim.g.netrw_altv = 1 -- Open with right splitting
 -- vim.g.netrw_liststyle = 3 -- Tree-style view
 -- vim.g.undotree_SetFocusWhenToggle = true
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -36,4 +35,4 @@ vim.opt.colorcolumn = "100"
 vim.opt.list = true
 vim.opt.listchars:append "eol:↴"
 
-
+vim.g.copilot_assume_mapped = true 

@@ -25,8 +25,13 @@ return {
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local lspconfig = require('lspconfig')
-            -- lspconfig.rust_analyzer.setup({})
-            -- lspconfig.lua_ls.setup({})
+            lspconfig.tsserver.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.rust_analyzer.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.lua_ls.setup({})
             lspconfig.pylsp.setup({
                 capabilities = capabilities,
             })
@@ -129,7 +134,8 @@ return {
                     end, { "i", "s" }),
                 }),
                 sources = cmp.config.sources({
-                    { name = 'codeium'},
+                    --{ name = 'codeium'},
+                    { name = "copilot" },
                     { name = "snippy" },
                     { name = "nvim_lsp" },
                     { name = "buffer" },
